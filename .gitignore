@@ -1,0 +1,13 @@
+tags
+.swp
+*~
+.DS_Store
+*.o
+*.a
+*.so
+*.cgo1.go
+*.cgo2.c
+*.exe
+*.test
+
+pluginbaby
