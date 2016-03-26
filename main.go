@@ -15,6 +15,8 @@ import (
 var paths = []string{
 	"bundle",
 	"ftbundle",
+	"pack/bundle/ever",
+	"pack/bundle/opt",
 }
 
 // Repository object.
