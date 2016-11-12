@@ -21,7 +21,7 @@ var paths = []string{
 // Repository object.
 type Repository struct {
 	path string
-	vcs string
+	vcs  string
 }
 
 // Constructer.
