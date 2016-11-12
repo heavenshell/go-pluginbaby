@@ -20,7 +20,7 @@ func TestShouldGetVimHome(t *testing.T) {
 
 func TestShouldListRepositories(t *testing.T) {
 	home := getVimHome()
-	repositories := listRepositories(home, "bundle")
+	repositories := listRepositories(home, "pack")
 	if len(repositories) == 0 {
 		t.Fatalf("Fail")
 	}
@@ -28,7 +28,7 @@ func TestShouldListRepositories(t *testing.T) {
 
 func TestListRepositoriesShouldContainsRepositoryObject(t *testing.T) {
 	home := getVimHome()
-	repositories := listRepositories(home, "bundle")
+	repositories := listRepositories(home, "pack")
 	for i := range repositories {
 		if reflect.TypeOf(repositories[i]).String() != "*main.Repository" {
 			t.Fatalf("Fail")
@@ -38,7 +38,7 @@ func TestListRepositoriesShouldContainsRepositoryObject(t *testing.T) {
 
 func TestRepositoryObjectShouldContainsPath(t *testing.T) {
 	home := getVimHome()
-	repositories := listRepositories(home, "bundle")
+	repositories := listRepositories(home, "pack")
 	for i := range repositories {
 		if m, _ := regexp.MatchString("^/*[.vim]*[bundle|ftbundle]*", repositories[i].path); !m {
 			t.Fatalf("Fail")

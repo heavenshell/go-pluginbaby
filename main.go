@@ -13,8 +13,9 @@ import (
 
 // Plugin paths.
 var paths = []string{
-	"bundle",
-	"ftbundle",
+	"pack/bundle/start",
+	"pack/bundle/opt",
+	"pack/ftbundle/opt",
 }
 
 // Repository object.
@@ -38,7 +39,7 @@ var repos = []*Repository{}
 func runGit(dir string) {
 	os.Chdir(dir)
 	fmt.Printf("git update %s\n", dir)
-	cmd := exec.Command("git", "pull", "origin", "master")
+	cmd := exec.Command("git", "pull", "origin", "master", "--ff")
 	runCmd(cmd)
 }
 
